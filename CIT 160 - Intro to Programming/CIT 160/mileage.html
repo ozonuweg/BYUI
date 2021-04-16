@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Mileage of a Vehicle</title>
+
+<script>
+/* Input: Current and previous odometer readings, gallons of gasoline used
+ * Processing: Calculate the volume of the cylinder.
+ * Output: the gas mileage of a vehicle
+ */
+function mileage() {
+    // Get the inputs from the user
+    let currentOdometer = parseFloat(document.getElementById('currentOdometerInput').value);
+    let previousOdometer = parseFloat(document.getElementById('previousOdometerInput').value);
+    let gallons = parseFloat(document.getElementById('gallonsInput').value);
+
+    // Compute the vehicle mileage.
+    let vehicleMileage = (currentOdometer - previousOdometer) / gallons;
+
+    // Display the mileage to the user.
+    document.getElementById('outputDiv').innerHTML = vehicleMileage;
+}
+</script>
+</head>
+
+<body>
+Current Odometer <input type="text" id="currentOdometerInput" size="8"><br>  
+Previous Odometer <input type="text" id="previousOdometerInput" size="8"><br>
+Gallons of Gasoline <input type="text" id="gallonsInput" size="5"><br>
+<br>  
+<button type="button" onclick="mileage()">Compute vehicle mileage in mpg</button>  
+<div id="outputDiv"></div>
+</body>
+</html>

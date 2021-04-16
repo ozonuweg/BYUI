@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Array</title>
+
+<script>
+/* Defining Table
+ * Input: no user input
+ * Processing: Test the addEnds and getMiddle functions by calling them.
+ * Output: The values returned from the addEnds and getMiddle functions.
+ */
+function test() {
+    let list1 = [ 17, 8, 9, 5, 20 ];
+    let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+
+    // Test the addEnds function by calling it two times.
+    let sum1 = addEnds(list1);
+    let sum2 = addEnds(list2);
+
+    // Test the getMiddle function by calling it two times.
+    let mid1 = getMiddle(list1);
+    let mid2 = getMiddle(list2);
+
+    // Build a string to display to the user.
+    let output =
+            "Sum of the first and last value of list 1 is " + sum1 + '<br>' +
+            "Sum of the first and last value of list 2 is " + sum2 + '<br>' +
+            "Middle value of list 1 is " + mid1 + '<br>' +
+            "Middle value of list 2 is " + mid2;
+
+    // Display the output string for the user to see.
+    document.getElementById('output').innerHTML = output;
+}
+
+/* Defining Table
+ * Input: no user input
+ * Processing: Adds the first and last value in an array
+ * Output: Return the sum
+ */
+function addEnds(list) {
+    let firstValue = list[0];
+    let lastValue = list[list.length - 1];
+    return firstValue + lastValue;
+}
+
+/* Defining Table
+ * Input: no user input
+ * Processing: Retrieves the middle index in an array
+ * Output: Return the value
+ */
+function getMiddle(list) {
+    return list[Math.round((list.length - 1) / 2)];
+}
+</script>
+</head>
+
+<body>
+    <h3>This program outputs the sum of the first and last value of two lists AND the middle element of two lists.</h3>
+    <button type="button" onclick="test()">Click to get values!</button>
+    <div id="output"></div>
+</body>
+</html>

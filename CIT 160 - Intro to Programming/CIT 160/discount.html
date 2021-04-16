@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>What is the total for you today?</title>
+
+<script>
+/* Input: the customer's subtotal
+ * Processing: Determine if the customer gets a 10% discount if subtotal is > $50
+ *    on Tuesday and Wednesdays
+ * Output: new total wih discount (if applicable) plus tax.
+ */
+function computeTotal() {
+    // Computes day of the week
+    var dayOfWeek = new Date().getDay();
+
+    // Gets the subtotal from the user
+    let subtotal = parseFloat(document.getElementById('userSubtotal').value);
+
+    let newTotal = 0;
+    let discount = 0;
+    let tax = 0;
+    if ((dayOfWeek == 2 || dayOfWeek == 3) && subtotal > 50) {
+        discount = subtotal * 0.1;
+        subtotal = subtotal - discount;
+        tax = subtotal * 0.06;
+        newTotal = subtotal + tax;
+
+        // Round the new total to two digits after the decimal
+        newTotal = newTotal.toFixed(2);
+    }
+    else {
+        tax = subtotal * 0.06;
+        newTotal = subtotal + tax;
+
+        // Round the new total to two digits after the decimal
+        newTotal = newTotal.toFixed(2);
+    }
+
+    // Display the final total to the user
+    document.getElementById('outputDiv').innerHTML = newTotal;
+}
+</script>
+</head>
+
+<body>
+<h1>Do you qualify for a discount? Terms and Conditions Apply!</h1>
+What is your subtotal? 
+    <input type="text" id="userSubtotal" size="7"><br>   
+<button type="button" onclick="computeTotal()">Calculate Total amount due in $</button>
+<div id="outputDiv"></div>  
+</body>
+</html>

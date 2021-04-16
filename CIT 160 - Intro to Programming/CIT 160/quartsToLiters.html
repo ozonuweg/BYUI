@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Volume from Quarts to Liters</title>
+
+<script>
+/* Input: Volume in quarts
+ * Processing: Compute and display the volume in liters.
+ * Output: The volume in liters
+ */
+function quartsVolume() {
+    // Get the volume in quarts from the user.
+    let quarts = parseFloat(document.getElementById('quartsInput').value);
+
+    // Compute the volume in liters.
+    let liters = quarts / 1.05668821;
+
+    // Round the volume in liters to two digits after the decimal
+    let digits = 2;
+    let multiplier = Math.pow(10, digits);
+    liters = Math.round(liters * multiplier) / multiplier;
+
+    // Display the volume in liters to the user.
+    document.getElementById('outputDiv').innerHTML = liters;
+}
+</script>
+</head>
+
+<body>
+Enter the volume in quarts (qz) <input type="text" id="quartsInput" size="5"><br>
+<br>
+<button type="button" onclick="quartsVolume()">Click here to get the volume in liters (l)</button>  
+<div id="outputDiv"></div>  
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Powers of Two</title>
+
+<script>
+/* Input: no input
+ * Processing: Compute the powers of 2
+ * Output: Powers of two from index 0 - 31
+ */
+function PowersOfTwo() {
+    let display = "";
+    let power = 2;
+
+    for (i = 0; i <= 31; i++) {
+        let result = power ** i;
+        display += result + ", ";
+    }
+
+document.getElementById("outputDiv").innerHTML = display;
+}  
+</script>
+</head>
+
+<body>
+    <h2>Click on the button to display the power of 2 form index 0 - 31</h2>
+    <button type="button" onclick="PowersOfTwo()">Power</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

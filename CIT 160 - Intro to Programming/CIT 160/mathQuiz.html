@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Math Quiz</title>
+
+<script>
+/* Input: Two numbers, an operator, and an answer
+ * Processing: Determine if user's answer matches correct answer
+ * Output: A message that tells the user the if his/her answer is correct or not
+ */
+function mathFunction() {
+    // Get the user input from a text field
+    let number1 = parseFloat(document.getElementById('firstnumber').value);
+    let operator = document.getElementById('mathsymbol').value;
+    let number2 = parseFloat(document.getElementById('secondnumber').value);
+    let answer = parseFloat(document.getElementById('solution').value);
+
+    // Compute right answer.
+    let rightAnswer;
+    if (operator == "+") {
+        rightAnswer = number1 + number2;
+    }
+    else if (operator == "-") {
+        rightAnswer = number1 - number2;
+    }
+    else if (operator == "*") {
+        rightAnswer = number1 * number2;
+    }
+    else if (operator == "/") {
+        rightAnswer = number1 / number2;
+    }
+
+    // Display the message to the user.
+    if (rightAnswer == answer) {
+        document.getElementById('output').innerHTML = "Correct! Good job!";
+    }
+    else {
+        document.getElementById('output').innerHTML = "Incorrect! Try again!";
+    }
+}
+</script>
+</head>
+
+<body>                      
+Enter first number: <input type="text" id="firstnumber"><br>
+Enter an arithmetic operator: <input type="text" id="mathsymbol"><br>
+Enter second number: <input type="text" id="secondnumber"><br>
+Enter the answer: <input type="text" id="solution"><br>
+<br>
+<button type="button" onclick="mathFunction()">Check</button>
+<div id="output"></div>              
+</body>         
+</html>

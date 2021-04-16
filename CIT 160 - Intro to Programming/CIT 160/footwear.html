@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Footwear for the day's weather</title>
+
+<script>
+/* Input: Weather
+ * Processing: Determine what type of footwear user should wear based on the weather
+ * Output: A message that tells the user the type of footwear to wear
+ */
+function footwear() {
+    // Get the user input from a text field
+    let weather = document.getElementById('inputBox').value;
+
+    // Choose a message.
+    let message;
+    if (weather == "hot") {
+        message = "You should wear sandals";
+    }
+    else if (weather == "rain") {
+        message = "You should wear galoshes";
+    }
+    else if (weather == "snow") {
+        message = "You should wear boots";
+    }
+    else {
+        message = "You should wear shoes";
+    }
+
+    // Display the message to the user.
+    document.getElementById('output').innerHTML = message;
+}
+</script>
+</head>
+
+<body>                      
+What is the weather condition? <input type="text" id="inputBox">
+<button type="button" onclick="footwear()">Get Footwear</button>
+<div id="output"></div>              
+</body>         
+</html>

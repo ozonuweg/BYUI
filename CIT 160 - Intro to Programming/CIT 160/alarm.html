@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Can I Sleep In?</title>
+
+<script>
+/* Input: No input. 
+ * Processing: Determine if the user can sleep depending on the day (if it's a weekday or
+ *    weekend or holiday)
+ * Output: a message letting the user know if he can sleep in or not.
+ */
+function canSleep() {
+    // Computes current day, month
+    var now = new Date();
+    var month = now.getMonth();
+    var dayOfMonth = now.getDate();
+    var dayOfWeek = now.getDay();
+    
+    let message;
+    if (dayOfWeek == 0 || dayOfWeek == 6 || dayOfMonth == 1 && month == 0 || dayOfMonth == 4 && month == 6 || dayOfMonth == 25 && month == 11) {
+        message = 'Yay!!! Sleep in.';
+    } 
+    else {
+        message = 'No you cannot sleep in today. Get up!';
+    }
+
+    // Display a message based on conditions above
+    document.getElementById('output').innerHTML = message;
+}
+</script>
+</head>
+
+<body>
+<h1>Can you sleep in?</h1>
+<button type="button" onclick="canSleep()">Click to see if you can!</button>
+<div id="output"></div> 
+</body>
+</html>

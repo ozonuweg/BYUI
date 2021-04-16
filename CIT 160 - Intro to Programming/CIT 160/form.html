@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Rex Barzee">
+<style>
+.myDiv {
+    border: 10px outset orange;
+    background-color: lightblue;
+    text-align: center;
+}
+</style>
+<title>Contact Me</title>
+</head>
+
+
+
+
+<body>
+<h1>Contact Me</h1>
+<div class="myDiv">
+    <h2>Let us chat soon!</h2>
+    <p>Fill out the information below</p>
+</div>
+
+<p>
+Name:<br>
+<input type="text" id="fullName" size="30">
+</p>
+
+<p>
+Email address:<br>
+<input type="text" id="email" size="30">
+</p>
+
+<p>
+Message:<br>
+<textarea id="txaMessage" rows="8" cols="40">
+</textarea>
+</p>
+
+<p>
+<button type="button" onclick="sendText()">Submit</button>
+</p>
+
+<div id="note">Thank you for reaching out. I'll get back to you soon!</div>
+</body>
+</html>
